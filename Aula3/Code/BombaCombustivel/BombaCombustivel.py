@@ -1,6 +1,9 @@
 '''''
 Codigo adaptado de git@github.com:ifpb/intin-poo.git
+https://pypi.org/project/playsound/
 pip install playsound
+pip install playsound=1.2.2 --> correçāo de erro no windows
+Mac: pip3 install PyObjC 
 '''
 from playsound import playsound
 
@@ -112,10 +115,10 @@ class Veiculo:
 
 
 # Testes
-'''
+
 v1 = Veiculo(8, 35, 90000 ,'Fiat Uno','Passeio')
 v1.buzinar()
-
+'''
 bomba1 = BombaCombustivel(10000,'Gasolina Aditivada', 7.30 )
 v1 = Veiculo(8, 35, 90000 ,'Fiat Uno','Passeio')
 
