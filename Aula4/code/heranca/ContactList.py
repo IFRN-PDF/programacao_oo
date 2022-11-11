@@ -1,11 +1,19 @@
 class ContactList(list): 
 
     def search(self, name):
-        matching_contacts = [] 
+        matching_contacts = ContactList() 
         for contact in self:
             if name in contact.name: 
                 matching_contacts.append(contact)
         return matching_contacts
+
+    def __str__(self):
+        names = ''
+        for c in self:
+            names = names + c.name + ' , '
+
+        return names
+
 
 class Contact():
     all_contacts = ContactList()
@@ -14,6 +22,9 @@ class Contact():
         self.name = name
         self.email = email
         Contact.all_contacts.append(self)
+
+    def __str__(self):
+        return self.name
 
 c1 = Contact('Fulano da Silva', 'fulano1@dominio.com') 
 c2 = Contact('Fulano Sousa', 'fulano2@dominio.com')

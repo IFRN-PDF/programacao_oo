@@ -27,7 +27,7 @@ print(f1.name, f1.email)
 f1.order('Preciso de 2 camisas do palmeiras')
 
 '''Vai gerar erro'''
-#c1.order('Preciso de 2 camisas do palmeiras')
+c1.order('Preciso de 2 camisas do palmeiras')
 
 
 '''all_contacts é compartilhado por ambos objetos.
@@ -38,4 +38,3 @@ print(f1.all_contacts)
 
 c1.print_allcontacts()
 #Contact.all_contacts
-
