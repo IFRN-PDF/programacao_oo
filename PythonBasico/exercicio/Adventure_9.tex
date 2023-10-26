@@ -1,0 +1,154 @@
+% Don't like 10pt? Try 11pt or 12pt
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{ae}
+\usepackage[portuges, brazil]{babel}
+\usepackage{graphicx}
+\usepackage[hmargin={2cm},vmargin={2cm}]{geometry}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{url}
+\usepackage{mathtools}
+% Definindo novas cores
+\definecolor{green}{rgb}{0,0.5,0}
+%\definecolor{blue}{rgb}{0,0.5}
+\definecolor{yellow}{rgb}{0.5,0.5,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+% Configurando layout para mostrar codigos C++
+\usepackage{listings}
+\lstset{
+  language=C++,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{yellow},
+  stringstyle=\color{green},
+  commentstyle=\color{gray},
+  extendedchars=true,
+  showspaces=false,
+  showstringspaces=false,
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  breaklines=true,
+  backgroundcolor=\color{white},
+  breakautoindent=true,
+  captionpos=b,
+  xleftmargin=0pt,
+  frame=tb,
+basicstyle=\footnotesize,
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{lastpage}
+\lhead{\textsc{IFRN}}
+\chead{\textsc{TADS - Programação de Computadores}}
+\rhead{\textsc{Aventura de Natal II}}
+%\lfoot{Esquerda do Rodapé}
+\cfoot{\texttt{Página \thepage}/\pageref{LastPage}}
+%\rfoot{Direita do Rodapé}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\newcommand{\veasy}{({\color{green} Muito Fácil})}
+\newcommand{\easy}{({\color{yellow} Fácil})}
+\newcommand{\normal}{({\color{orange} Normal})}
+\newcommand{\inte}{({\color{blue} Intermediário})}
+\newcommand{\adv}{({\color{red} Avançado})}
+
+\begin{document}
+%=====================================================
+%					TITLE
+%=====================================================
+\thispagestyle{empty}
+	\begin{center}
+		\begin{figure}
+		\centering
+		\includegraphics[]{fig/if}
+		\end{figure}
+
+		{\large \scshape Tecnologia e Análise em Desenvolvimento de Sistemas}\\[1cm]
+
+		\begin{flushleft}
+		 	Disciplina de POO\\ Prof. Demétrios Coutinho - 31/08/2023\\[1cm]
+		\end{flushleft}
+		
+		{- Mini Sistema de Vôos -}\\[1cm]
+	\end{center}
+	
+%=====================================================
+%					DOCUMENT
+%=====================================================	
+	\begin{enumerate}
+	\item Crie um programa que leia as notas do primeiro \(N_{1}\) e do segundo \(N_{2}\) bimestre e calcule a média ponderada (MP). O algoritmo deve informar se o aluno está "aprovado", "reprovado" ou "em prova final". O aluno estará aprovado com média maior ou igual a 60 e reprovado com média menor que 20. Segue a expressão da média ponderada:
+	\[ MP = \frac{2N_{1} + 3N_{2}}{5} \]
+	
+	\item  Faça um programa para calcular as raízes da equação de Bhaskara. 
+	\[ x_{1} = \frac{-b + \sqrt{\Delta}}{2a} \quad x_{2} = \frac{-b - \sqrt{\Delta}}{2a} \]
+	onde
+	\[ \Delta = b^{2} - 4ac \]
+	O algoritmo deve ler os 3 coeficientes \(a\), \(b\) e \(c\) e deve informar o valor de \(x_{1}\) e \(x_{2}\). Se \(\Delta < 0\), o algoritmo deve informar que é impossível realizar a operação.
+	
+	\item Em uma eleição sindical, concorreram aos cargos de presidente três candidatos (representados pelas variáveis A, B e C). Durante a apuração dos votos, foram computados votos nulos e em branco, além dos votos válidos para cada candidato. Deve ser criado um programa para fazer a leitura da quantidade de votos válidos para cada candidato, além de ler também a quantidade de votos nulos e em branco. Ao final, o programa deve apresentar o número total de eleitores, considerando votos válidos, nulos e em branco; o percentual correspondente aos votos válidos em relação à quantidade de eleitores; o percentual de votos válidos do candidato A em relação à quantidade de eleitores; o mesmo para os candidatos B e C; o percentual de votos nulos em relação à quantidade de eleitores; e, por último, o percentual de votos em branco em relação à quantidade de eleitores.
+	
+	\item Faça um programa para ler: a descrição do produto (nome), a quantidade adquirida e o preço unitário. Calcule e escreva o total (total = quantidade adquirida \(\times\) preço unitário), o desconto e o total a pagar (total a pagar = total - desconto), sabendo-se que:
+	\begin{itemize}
+		\item Se a quantidade \(\leq 5\), o desconto será de 2\%
+		\item Se a quantidade \(> 5\) e \(\leq 10\), o desconto será de 3\%
+		\item Se a quantidade \(> 10\), o desconto será de 5\%
+	\end{itemize}
+	
+	\item  Faça um programa em Portugol Studio para calcular as raízes da equação de Bhaskara. 
+	\[ x_{1} = \frac{-b + \sqrt{\Delta}}{2a} \quad x_{2} = \frac{-b - \sqrt{\Delta}}{2a} \]
+	onde
+	\[ \Delta = b^{2} - 4ac \]
+	O algoritmo deve ler os 3 coeficientes \(a\), \(b\) e \(c\) e informar o valor de \(x_{1}\) e \(x_{2}\). Se \(\Delta < 0\) e \(a = 0\), o programa deve informar que é impossível realizar a operação. Se \(\Delta = 0\), informar que as raízes são reais e iguais. Se \(\Delta > 0\), informar que as raízes são reais e diferentes de zero.
+	
+	\item Implemente um programa chamado fibonacci01.py que recebe um valor inteiro positivo \(L\) e imprime os termos da série de Fibonacci inferiores a \(L\). A sequência de Fibonacci é definida como tendo os dois primeiros termos iguais a 1 e cada termo seguinte é a soma dos dois termos imediatamente anteriores. Desta forma, se fosse fornecido ao programa uma entrada \(L = 15\), o mesmo deveria produzir a seguinte sequência de termos da série: 1, 1, 2, 3, 5, 8, 13.
+	
+	\item Desenvolva funções para as seguintes opções:
+	\begin{enumerate}
+		\item Swap: Troque o conteúdo de duas variáveis passadas por referência.
+		\item Ordena3: Receba como parâmetros três números inteiros e um flag ordem. Ordene-os em ordem crescente se ordem for V, ou em ordem decrescente se ordem for F (usando passagem de parâmetro por referência e a função Swap()).
+		\item EhPrimo: Verifique se um número recebido como parâmetro é primo.
+		\item EhPar: Retorne verdadeiro (V) se um número recebido como parâmetro for par e falso (F) caso contrário.
+		\item EhAmigo: Retorne verdadeiro (V) se os dois números recebidos como parâmetros forem amigos e falso (F) caso contrário.
+		\item mdc: Retorne o Máximo Divisor Comum de 3 números recebidos como parâmetros.
+		\item mmc: Retorne o Mínimo Múltiplo Comum de 3 números recebidos como parâmetros.
+		\item Fatorial: Retorne o fatorial do número recebido como parâmetro.
+	\end{enumerate}
+	
+		
+	\end{enumerate}
+	
+	
+	
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
